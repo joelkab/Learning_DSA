@@ -40,9 +40,17 @@ the output is 123. this first function will fist call the function fun1 then out
 -Recursion is also like repeating but the main difference is a loop will have only ascending phase
 but the recursion will have ascending and descending.
 
+- Recursive functions utilize stack - which takes up a lot of memory.
+therefor recursive functions are memoory consuming
 */
 
+/* Time Complexity of Recursion
+Both function above take up 3 unites of time. becasue the functon is being called 3 times.
+- time depends of the value that we are passing in.
+- O(n)
+*/
 void main()
 {
     cout << "hello world";
 }
+
