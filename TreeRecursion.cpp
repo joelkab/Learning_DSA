@@ -48,7 +48,19 @@ void funB(int n){
     }
 }
 */
+/*-------------------------------------------- Nested Recursion-----------
+- In a Nested resursion a function will pass a parameter as a resurive call. - a recursion inside a recursion.
+int fun(int n){
+    if (n>100){
+        return n-10;
+    } else {
+        return fun(fun(n+11))
+    }
+}
 
+fun(95);
+output: 91
+*/
 void main()
 {
     cout << "hello world";
