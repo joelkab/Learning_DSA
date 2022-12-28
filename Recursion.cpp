@@ -77,11 +77,23 @@ for this function the addition operation wont be of use untill the function is o
 -space - O(n)
 // loops
 -time - O(n)
--space - O(n)
+-space - O(1)
 * incase of tail recursion loops are better
 
 */
+///////////////////////////////////
 
+/* Head recursion
+- the function doesnt have to process or perfrom any operation at the time of calling
+void fun(n){
+    if(n>0){
+        fun(n-1)+n;
+        ----
+        ----
+    }
+}
+- can not be easliy converted to a loop but its possible.
+*/
 void main()
 {
     cout << "hello world";
