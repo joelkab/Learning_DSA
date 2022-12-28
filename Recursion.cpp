@@ -49,8 +49,40 @@ Both function above take up 3 unites of time. becasue the functon is being calle
 - time depends of the value that we are passing in.
 - O(n)
 */
+
+///////////////////////////////////
+
+/* Tail recursion
+- the last statemnt in a function is called a tail recursion.
+void fun(n){
+    if(n>0){
+        ----
+        ----
+        fun(n-1);
+    }
+}
+but if theres an operation or anything done after the function call then its no longer
+a tail recursive function.
+void fun(n){
+    if(n>0){
+        ----
+        ----
+        fun(n-1)+n;
+    }
+}
+for this function the addition operation wont be of use untill the function is over
+-tail recursion means at returning time the function hasnt has to perform anything.
+-can easily be converted to loops 
+-time - O(n)
+-space - O(n)
+// loops
+-time - O(n)
+-space - O(n)
+* incase of tail recursion loops are better
+
+*/
+
 void main()
 {
     cout << "hello world";
 }
-
