@@ -1,23 +1,31 @@
 #include <iostream>
 using namespace std;
 
-/*---------------------------Sum of first N natural Numbers-----------
+/*---------------------------Calculate e^x by Recursion ( using Taylor Series )-----------
  */
-int Sum(int n)
+double e(int x, int n)
 {
+    static double p = 1, f = 1;
+    double r;
+ 
+    // Termination condition
     if (n == 0)
-    {
-        return 0;
-    }
-    else
-    {
-        return Sum(n - 1) + n;
-    }
-    // loop would be the best option
+        return 1;
+ 
+    // Recursive call
+    r = e(x, n - 1);
+ 
+    // Update the power of x
+    p = p * x;
+ 
+    // Factorial
+    f = f * n;
+ 
+    return (r + p / f);
 }
-
+ 
 int main()
 {
 
-    cout << "Total" << Sum(7);
+    cout << e(1, 10);
 }
