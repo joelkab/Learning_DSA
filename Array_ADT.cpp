@@ -1,24 +1,52 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
-/*----------------------------------Deleting elements from Array--------
-Delete(index);
-
- A = {8,3,7,15,65, ,3,2,2332}
-- when deleting elements from an array you should replace that index with another element
-if a space is vacant, you should shift all the elements.
--a simple for loop should do
-
-A= A[index];
-for(i = index; i<length - 1; i++){
-    A[i]= A[i+1];
-}
-length--;
+/*----------------------------------Linear Search--------
 
 */
 
 int main()
 {
+    int arr[7] = {8, 9, 3, 2, 5, 6, 7};
+    int key = 5;
+    for (int i = 0; i < 7; i++)
+    {
 
-    cout <<"Learning more about arrays";
+        if (key == arr[i])
+        {
+            cout << " found ";
+        }
+        cout << " " << arr[i];
+    }
+    // time - O(n)
+    /*
+    Moving a key element which is repeatly searched 1 step forward, which will
+    improve time complexity.
+    -This process is called Transposition.
+    */
+    for (int i = 0; i < 7; i++)
+    {
+        if (key == arr[i])
+        {
+            swap(arr[i], arr[i - 1]);
+        }
+    }
+    /*
+    Another better way would be to swap the key element with the first elemnt in the array.
+
+    */
+    cout << endl;
+    for (int i = 0; i < 7; i++)
+    {
+        if (key == arr[i])
+        {
+            swap(arr[i], arr[0]);
+        }
+    }
+
+    for (int i = 0; i < 7; i++)
+    {
+        cout << " " << arr[i];
+    }
 }
