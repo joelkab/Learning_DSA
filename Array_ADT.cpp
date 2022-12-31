@@ -27,8 +27,26 @@ Algo BinSearch(L, h, key)
         }
     }
 }
-
 */
+
+/*----------------------------------Binary Search uisng Recursion--------
+Algo RBInSearch(L,h,key){
+    if(L<=h){
+        mid = (L+h)/2;
+        if(key== arr[mid]){
+            return mid;
+        }
+        else if(key < arr[mid]){
+            return RBInSearch(L,mid-1,key);
+            
+        }
+        else{
+            return RBInSearch(mid+1,h,key);
+        }
+    }
+}
+*/
+
 int main()
 {
     int arr[7] = {8, 9, 3, 2, 5, 6, 7};
