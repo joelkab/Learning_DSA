@@ -2,51 +2,36 @@
 #include <algorithm>
 using namespace std;
 
-/*----------------------------------Linear Search--------
+/*----------------------------------Binary Search--------
+- In order to use Binary Search every element inside an array must be sorted
+- To perform binary search, you need 3 index variables, which are lower,high and mid. mid is low + high / 2
+- to check if a element is not in a list, is by checking if low is greater than high, low should always be on the left side while high on the
+right side.
+
+Algo BinSearch(L, h, key)
+{
+    while (l <= h)
+    {
+        mid = (L + h) / 2;
+        if (key == arr[mid])
+        {
+            return mid;
+        }
+        else if (key < arr[mid])
+        {
+            h = mid - 1;
+        }
+        else
+        {
+            L = mid + 1;
+        }
+    }
+}
 
 */
-
 int main()
 {
     int arr[7] = {8, 9, 3, 2, 5, 6, 7};
     int key = 5;
-    for (int i = 0; i < 7; i++)
-    {
-
-        if (key == arr[i])
-        {
-            cout << " found ";
-        }
-        cout << " " << arr[i];
-    }
-    // time - O(n)
-    /*
-    Moving a key element which is repeatly searched 1 step forward, which will
-    improve time complexity.
-    -This process is called Transposition.
-    */
-    for (int i = 0; i < 7; i++)
-    {
-        if (key == arr[i])
-        {
-            swap(arr[i], arr[i - 1]);
-        }
-    }
-    /*
-    Another better way would be to swap the key element with the first elemnt in the array.
-
-    */
-    cout << endl;
-    for (int i = 0; i < 7; i++)
-    {
-        if (key == arr[i])
-        {
-            swap(arr[i], arr[0]);
-        }
-    }
-
-    for (int i = 0; i < 7; i++)
-    {
-        cout << " " << arr[i];
-    }
+    
 }
