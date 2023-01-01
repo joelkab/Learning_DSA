@@ -45,8 +45,14 @@ Algo RBInSearch(L,h,key){
         }
     }
 }
+
+array should be taken as a parameter. if not than we should assume that it is a global.
 */
 
+// the number of competition depends on the height of a tree.
+//time - log n
+//best case O(1)
+//worst case O(log n)
 int main()
 {
     int arr[7] = {8, 9, 3, 2, 5, 6, 7};
