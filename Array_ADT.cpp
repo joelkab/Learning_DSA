@@ -2,60 +2,51 @@
 #include <algorithm>
 using namespace std;
 
-/*----------------------------------Binary Search--------
-- In order to use Binary Search every element inside an array must be sorted
-- To perform binary search, you need 3 index variables, which are lower,high and mid. mid is low + high / 2
-- to check if a element is not in a list, is by checking if low is greater than high, low should always be on the left side while high on the
-right side.
+/*----------------------------------. Get( ) Set( ) Avg( ) Max( ) functions on Array--------
+*******Get()
 
-Algo BinSearch(L, h, key)
+int Get(index)
 {
-    while (l <= h)
+    if (index >= 0 && index < Length)
     {
-        mid = (L + h) / 2;
-        if (key == arr[mid])
-        {
-            return mid;
-        }
-        else if (key < arr[mid])
-        {
-            h = mid - 1;
-        }
-        else
-        {
-            L = mid + 1;
-        }
+        return arr[index];
     }
 }
-*/
+- The time complexity is constant so O(1);
+*******Set()
 
-/*----------------------------------Binary Search uisng Recursion--------
-Algo RBInSearch(L,h,key){
-    if(L<=h){
-        mid = (L+h)/2;
-        if(key== arr[mid]){
-            return mid;
-        }
-        else if(key < arr[mid]){
-            return RBInSearch(L,mid-1,key);
-            
-        }
-        else{
-            return RBInSearch(mid+1,h,key);
-        }
+    - also similar to the get function
+    used to replace a value at a particular index,
+    or over riding.
+
+        int Set(index, x)
+{
+    if (index >= 0 && index < Length)
+    {
+        arr[index] = x;
     }
 }
+- time complexity is constant
+        *******
+        Max() -
+    finding the maximum element in a array
+    int Max(arr[])
+{
+    int max = arr[0];
 
-array should be taken as a parameter. if not than we should assume that it is a global.
+    for (i = 1; i < length; i++)
+    {
+        if (Arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+time - O(n)
 */
-
-// the number of competition depends on the height of a tree.
-//time - log n
-//best case O(1)
-//worst case O(log n)
 int main()
 {
     int arr[7] = {8, 9, 3, 2, 5, 6, 7};
     int key = 5;
-    
 }
