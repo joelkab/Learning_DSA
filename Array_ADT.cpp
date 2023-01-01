@@ -2,47 +2,25 @@
 #include <algorithm>
 using namespace std;
 
-/*----------------------------------. Get( ) Set( ) Avg( ) Max( ) functions on Array--------
-*******Get()
+/*----------------------------------Reversing an Array--------
+First Method
+- You need two indices i and j. i at the begining of the loop and j at the end of the loop.  both indices will interchange
+then increment i and decrement j. repeat the steps untill i is greater than j.
 
-int Get(index)
-{
-    if (index >= 0 && index < Length)
-    {
-        return arr[index];
-    }
+for(i = 0; j = length -1; i <j; i++, j--){
+    temp = A[i];
+    A[i]= A[j];
+    A[j]= temp;
 }
-- The time complexity is constant so O(1);
-*******Set()
+time - O(n)
+/*----------------------------------left shift/ rotate an Array--------
+- shift all the elements of an array to the left side.
+- you will lose the first element 
+*Rotation means the deleted element will be copied at the end of the array
+W,E,l,CO,M,E , , ,
+E,l,CO,M,E , , ,W
 
-    - also similar to the get function
-    used to replace a value at a particular index,
-    or over riding.
 
-        int Set(index, x)
-{
-    if (index >= 0 && index < Length)
-    {
-        arr[index] = x;
-    }
-}
-- time complexity is constant
-        *******
-        Max() -
-    finding the maximum element in a array
-    int Max(arr[])
-{
-    int max = arr[0];
-
-    for (i = 1; i < length; i++)
-    {
-        if (Arr[i] > max)
-        {
-            max = arr[i];
-        }
-    }
-    return max;
-}
 time - O(n)
 */
 int main()
