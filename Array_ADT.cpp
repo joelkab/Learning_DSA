@@ -22,7 +22,33 @@ E,l,CO,M,E , , ,W
 
 
 time - O(n)
+/*----------------------------------Inserting an element in a sorted list--------
+
+A= 4,8,9,14,25,67,78
+
+we want to insert 20 , so we have to right shift all elements greater than 20.
+Insert 20
+int insert(array[], int num){
+    x = num;
+    i = length -1;
+    while (arr[i] > x){
+        arr[i+1] = A[i];
+        i --;
+    }
+    arr[i+1] = x;
+}/*----------------------------------Checking if a list is sorted--------
+
+Bool isSorted(A, n){
+    for(i = 0;i<n-1; i++){
+        if(A[i] > A[i+1]){
+            return false;
+        }
+        return true;
+    }
+}
+
 */
+
 int main()
 {
     int arr[7] = {8, 9, 3, 2, 5, 6, 7};
