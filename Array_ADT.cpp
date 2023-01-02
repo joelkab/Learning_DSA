@@ -46,7 +46,36 @@ Bool isSorted(A, n){
         return true;
     }
 }
+}/*----------------------------------Merging Arrays --------
+- trying to merge two sorted arrays you must create antoher array with the size of both arrays.
+A 3,8,16,20,25
+B 4,10,12,22,23
+c - empty array wih size A+B
 
+i =0;
+j =0;
+k =0; represents the index of  C
+1- check if the first element in A is less than the first element B
+2- if true add that element of A to C and i++(move to the next element of array A);
+3- else add the element of B to C j++(next element of array B)
+
+while(i<m&&j<n) {
+if(A[i]< B[i]){
+    c[k++] = A[i++];
+} else {
+    c[k++]= B[j++]
+    }
+}
+
+for(i<m ;i++){
+    c[k++]= A[i];
+}
+for(j<n;j++){
+    c[k++] = B[j];
+}
+
+time = θ(m+n)
+m+n is usally for merging
 */
 
 int main()
