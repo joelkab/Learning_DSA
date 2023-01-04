@@ -1,21 +1,10 @@
 #include <iostream>
 using namespace std;
- /*
- when storing data from a array to a matrix you need two functions 
- first a function to get data, with 4 parameters, array, row number, row collum, element.
+ /*----------------------------------Symmetric Matrix--------
+ -Elements from a Symmetric matrix usally have equal elements to row and colum
+  for example if matrix row and colum are equal to colum and row than its a symmetric matrix 
+- for storing symmetric matrix you dont have to create a two dimensional array, you can take a single array. 
 
- void Set(int A[], int i, int j, int x){
-    if(i == j){
-        A[i-1]= x;
-    }
- }
-
- int Get(int A[], int i, int j){
-    if( i == j){
-        return  A[i-1];
-    }
-    return 0;
- }
  */
 
 int main() {
