@@ -24,7 +24,15 @@ Index(A[i][j])
 also similar to a tri diagonal
 - has a mean diagonal and below that, there is more than one diagonal
 */
+/*----------------------------------Toeplitz Matrix--------
+- All diagonal ele≥mets are the same
+M[i,j]= M[i-1,j-1]
+Element --- n+n-1
 
+Index/9a[i][j]
+    case 1 if i<= j      Index = j-1
+    case 2 if i>j        Index = n+i-j-1
+*/
 int main()
 {
 }
