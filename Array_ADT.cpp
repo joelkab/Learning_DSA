@@ -15,7 +15,7 @@ for(i = 0; j = length -1; i <j; i++, j--){
 time - O(n)
 /*----------------------------------left shift/ rotate an Array--------
 - shift all the elements of an array to the left side.
-- you will lose the first element 
+- you will lose the first element
 *Rotation means the deleted element will be copied at the end of the array
 W,E,l,CO,M,E , , ,
 E,l,CO,M,E , , ,W
