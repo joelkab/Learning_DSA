@@ -13,6 +13,21 @@ A linked list is analogous to a chair in that only one person can sit on it, but
 Every element will bring its own memory and point it to the next element.
 
 First is a pointer which points on the first node 
+
+-defining a node
+You need two things data and a pointer 
+
+Struct Node {
+    int data;
+    struct Node * next;
+}
+
+- self-referential structures having a pointer of its own type 
+struct Node *P;
+
+P= new Node;
+p-> data = 10;
+p-> next = 0;
 */
 
 
