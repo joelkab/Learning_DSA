@@ -29,7 +29,19 @@ P= new Node;
 p-> data = 10;
 p-> next = 0;
 */
+/*----------------------------------More about Linked List--------
+To make a head of a linked list null you make it equal to zero or null.
+EX : struct Node * p = 0; or NULL;
 
+- Check if pointer p is pointing to a node
+if(p== NULL)
+
+-Check if theres more nodes after p, or p is the last node.
+if(p -> == NUll)
+
+if(p-> != NUll)
+
+*/
 
 
 int main()
