@@ -40,7 +40,18 @@ if(p== NULL)
 if(p -> == NUll)
 
 if(p-> != NUll)
+---Displaying Linked List--------
+-Moving to the next node 
+struct Node *p = first;
 
+p = p -> next
+if you dont know many nodes are there, uisng a while would be the best option.
+
+while(p != NUll(or 0)){
+    cout<<p -> data;
+    p = p ->next;
+
+}
 */
 
 
