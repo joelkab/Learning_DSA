@@ -78,26 +78,41 @@ void insert(int num)
     ptr->next = head;
     head = ptr;
 }
+
 // display all nodes
-void display_all_nodes()
+int MAX()
 {
-    cout << "The list contains:\n";
     struct Node *temp = head;
-    while (temp != NULL)
+    cout << "The list contains:\n";
+    int m = -1;
+    while (temp)
     {
         cout << temp->data << " ";
+        if (temp->data > m)
+        {
+            m = temp->data;
+        }
         temp = temp->next;
     }
     cout << endl;
+    return m;
 }
 
 int main()
 {
+    struct Node *ptr;
+
+    ;
 
     insert(23);
     insert(45);
     insert(67);
-    display_all_nodes();
+    insert(22);
+    insert(10);
+
+    int max = MAX();
+    cout << "\n The Max is: "
+         << max;
 
     struct Node *temp = head;
 }
