@@ -63,6 +63,14 @@ iny count(struct Node *p){
 }
 - the addition is done at running time becasue the result is unknown.
 */
+/*----------------------------------Searching in a Linked List--------
+- Linear Search
+Best method for finding elements in a linked list
+
+- Binary Search
+you can not acces the middle element of a linked list, so binary seach is not suited for it Linked listed
+
+*/
 struct Node
 {
     int data;
@@ -88,7 +96,7 @@ int MAX()
     while (temp)
     {
         cout << temp->data << " ";
-        if (temp->data > m)
+        if (temp->data < m)
         {
             m = temp->data;
         }
@@ -98,11 +106,25 @@ int MAX()
     return m;
 }
 
+int Search(int num)
+{
+    struct Node *temp = head;
+
+    while (temp != 0)
+    {
+        if (num == temp->data)
+        {
+            cout << "element is in the list";
+            return num;
+        }
+        temp = temp->next;
+    }
+    return 0;
+}
+
+// Time -O(n)
 int main()
 {
-    struct Node *ptr;
-
-    ;
 
     insert(23);
     insert(45);
@@ -110,9 +132,5 @@ int main()
     insert(22);
     insert(10);
 
-    int max = MAX();
-    cout << "\n The Max is: "
-         << max;
-
-    struct Node *temp = head;
+    int found = Search(67);
 }
