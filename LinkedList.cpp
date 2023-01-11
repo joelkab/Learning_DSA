@@ -67,8 +67,26 @@ iny count(struct Node *p){
 - Linear Search
 Best method for finding elements in a linked list
 
+*improving linear Search
+1. Transposition 
+2. Move to Head
+
+Its better to avoid moving elements(transposition) in a linked list but moving nodes is the best way
+-
+Node * Search(Node 8 P, int key){
+    Node *q = NULL:
+    while(p! = NULL){
+        if(Key == P-> data){
+            q-> next = p-> next;
+            p -> next = first;
+            first = p;
+        }
+        q = p;
+        p = p-> next;
+    }
+}
 - Binary Search
-you can not acces the middle element of a linked list, so binary seach is not suited for it Linked listed
+ you can not acces the middle element of a linked list, so binary seach is not suited for it Linked listed
 
 */
 struct Node
