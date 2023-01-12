@@ -68,7 +68,7 @@ iny count(struct Node *p){
 Best method for finding elements in a linked list
 
 *improving linear Search
-1. Transposition 
+1. Transposition
 2. Move to Head
 
 Its better to avoid moving elements(transposition) in a linked list but moving nodes is the best way
@@ -89,66 +89,94 @@ Node * Search(Node 8 P, int key){
  you can not acces the middle element of a linked list, so binary seach is not suited for it Linked listed
 
 */
+/*---------------------------------- Inserting in a Linked List--------
+********-inserting a node at the begining
+1. create and new node and initialized the node 
+Node * t = new Node;
+t-> data = x;
+2. make it point to first
+t-> next = first;
+3. move first to new node 
+first = t;
+
+- time O(1) - takes constant time when inserting at the begining of a linked list
+******-inserting a node at a specific location
+1. create a new node and initialized the node
+Node *t = new Node;
+t->data = x; a value you want
+2. create a new pointer named P and point it to first;
+p = first;
+3. move p to the position - 1
+for(int i = 0; i< pos -1; i++){
+   p = = -> next; 
+}
+4. the new video should be pointing to the next variable
+t -> next = p-> next
+p -> next = t;
+
+
+*/
 struct Node
 {
     int data;
     struct Node *next;
-};
-struct Node *head = NULL;
+} *first = NULL;
 
-// Insert a node at the start
-void insert(int num)
-{
-    struct Node *ptr = new Node;
-    ptr->data = num;
-    ptr->next = head;
-    head = ptr;
-}
+struct Node *head;
 
-// display all nodes
-int MAX()
+void create(int *arr, int size)
 {
-    struct Node *temp = head;
-    cout << "The list contains:\n";
-    int m = -1;
-    while (temp)
+    head = new Node;
+    head->data = arr[0];
+    head->next = NULL;
+    struct Node *last = new Node;
+    last = head;
+
+    for (int i = 0; i < size; i++)
     {
-        cout << temp->data << " ";
-        if (temp->data < m)
-        {
-            m = temp->data;
-        }
-        temp = temp->next;
+        struct Node *t = new Node;
+        t->data = arr[i];
+        t->next = NULL;
+        last->next = t;
+        last = t;
     }
-    cout << endl;
-    return m;
 }
-
 int Search(int num)
 {
+
     struct Node *temp = head;
 
-    while (temp != 0)
+    while (temp != NULL)
     {
         if (num == temp->data)
         {
-            cout << "element is in the list";
-            return num;
+            cout << "found " << temp->data << endl;
+
+            return temp->data;
         }
+
         temp = temp->next;
     }
-    return 0;
 }
+
+void display()
+{
+    struct Node *temp = head;
+    while (temp != NULL)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+}
+
+// Insert a node at the start
 
 // Time -O(n)
 int main()
 {
 
-    insert(23);
-    insert(45);
-    insert(67);
-    insert(22);
-    insert(10);
-
-    int found = Search(67);
+    int arr[] = {4, 7, 8, 1, 3, 87, 12, 39, 51, 23, 77};
+    create(arr, 11);
+    Search(51);
+    display();
 }
