@@ -172,7 +172,6 @@ void display()
 
 // Insert a node at the start or at an element
 
-
 void insert(Node *p, int pos, int key)
 {
     Node *t = NULL;
@@ -196,6 +195,25 @@ void insert(Node *p, int pos, int key)
         p->next = t;
     }
 }
+// Inserting at the end of a linked List;
+void inserting_Last(int x)
+{
+    Node *t = new Node;
+    Node *last ;
+
+    t->data = x;
+    t->next = NULL;
+
+    if (first == NULL)
+    {
+        first = last = t;
+    }
+    else
+    {
+        last->next = t;
+        last = t;
+    }
+}
 void display(Node *p)
 {
     if (p != NULL)
@@ -207,13 +225,15 @@ void display(Node *p)
 // Time -O(n)
 int main()
 {
-    
+
     int arr[] = {4, 7, 8, 1, 3, 87, 12, 39, 51, 23, 77};
-    create(arr, 11);
+    // create(arr, 11);
 
     insert(first, 0, 55);
     insert(first, 1, 22);
     insert(first, 2, 33);
+    inserting_Last(3);
+    inserting_Last(4);
 
     display(first);
     // display();
