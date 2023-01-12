@@ -91,12 +91,12 @@ Node * Search(Node 8 P, int key){
 */
 /*---------------------------------- Inserting in a Linked List--------
 ********-inserting a node at the begining
-1. create and new node and initialized the node 
+1. create and new node and initialized the node
 Node * t = new Node;
 t-> data = x;
 2. make it point to first
 t-> next = first;
-3. move first to new node 
+3. move first to new node
 first = t;
 
 - time O(1) - takes constant time when inserting at the begining of a linked list
@@ -108,7 +108,7 @@ t->data = x; a value you want
 p = first;
 3. move p to the position - 1
 for(int i = 0; i< pos -1; i++){
-   p = = -> next; 
+   p = = -> next;
 }
 4. the new video should be pointing to the next variable
 t -> next = p-> next
@@ -119,18 +119,18 @@ p -> next = t;
 struct Node
 {
     int data;
-    struct Node *next;
-} *first = NULL;
+    Node *next;
+} *first;
 
-struct Node *head;
+struct first;
 
 void create(int *arr, int size)
 {
-    head = new Node;
-    head->data = arr[0];
-    head->next = NULL;
+    first = new Node;
+    first->data = arr[0];
+    first->next = NULL;
     struct Node *last = new Node;
-    last = head;
+    last = first;
 
     for (int i = 0; i < size; i++)
     {
@@ -144,7 +144,7 @@ void create(int *arr, int size)
 int Search(int num)
 {
 
-    struct Node *temp = head;
+    struct Node *temp = first;
 
     while (temp != NULL)
     {
@@ -157,11 +157,12 @@ int Search(int num)
 
         temp = temp->next;
     }
+    return 0;
 }
 
 void display()
 {
-    struct Node *temp = head;
+    struct Node *temp = first;
     while (temp != NULL)
     {
         cout << temp->data << " ";
@@ -169,14 +170,51 @@ void display()
     }
 }
 
-// Insert a node at the start
+// Insert a node at the start or at an element
 
+
+void insert(Node *p, int pos, int key)
+{
+    Node *t = NULL;
+    t = new Node();
+    if (pos < 0)
+        return;
+    else if (pos == 0)
+    { // added
+        t->data = key;
+        t->next = first;
+        first = t;
+    }
+    if (pos > 0)
+    { // added
+        t->data = key;
+        for (int i = 0; i < pos - 1; i++)
+        {
+            p = p->next;
+        }
+        t->next = p->next;
+        p->next = t;
+    }
+}
+void display(Node *p)
+{
+    if (p != NULL)
+    {
+        cout << p->data << " ";
+        display(p->next);
+    }
+}
 // Time -O(n)
 int main()
 {
-
+    
     int arr[] = {4, 7, 8, 1, 3, 87, 12, 39, 51, 23, 77};
     create(arr, 11);
-    Search(51);
-    display();
+
+    insert(first, 0, 55);
+    insert(first, 1, 22);
+    insert(first, 2, 33);
+
+    display(first);
+    // display();
 }
