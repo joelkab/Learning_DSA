@@ -89,6 +89,7 @@ Node * Search(Node 8 P, int key){
  you can not acces the middle element of a linked list, so binary seach is not suited for it Linked listed
 
 */
+
 /*---------------------------------- Inserting in a Linked List--------
 ********-inserting a node at the begining
 1. create and new node and initialized the node
@@ -100,7 +101,8 @@ t-> next = first;
 first = t;
 
 - time O(1) - takes constant time when inserting at the begining of a linked list
-******-inserting a node at a specific location
+
+****************-inserting a node at a specific location
 1. create a new node and initialized the node
 Node *t = new Node;
 t->data = x; a value you want
@@ -114,6 +116,41 @@ for(int i = 0; i< pos -1; i++){
 t -> next = p-> next
 p -> next = t;
 
+*/
+
+/*---------------------------------- deleting a node at a specific location--------
+** -deleting the first node
+When deleting the first node you want the next node to be the first node.
+whenever you are  deleting a node make sure to delocate the memory for that node
+
+new - used to create a new memory for a node.
+delete - used to delete memory for a node.
+
+one pointer required, move the first node to the next element and set it to be the first node, while the secound node stays at the first node.
+
+Node * p = first;
+first = first-> next;
+x = p->data
+delete p;
+
+-time - O(1)- constant because its the first node
+
+** -deleting a node at a chosen position
+two pointers are required, a tail pointer for the previous element and one for the element you want to be deleted
+
+Node *p = first;
+Node * q = NULL;
+
+for(int i = 0; i> pos-1;i++){
+    q= p;
+    p = p->next;
+    q->next= p->next;
+    x= p->data;
+    delete p;
+}
+
+-time - min O(1), max O(n)
+
 
 */
 struct Node
@@ -124,6 +161,7 @@ struct Node
 
 struct first;
 
+// create a node
 void create(int *arr, int size)
 {
     first = new Node;
@@ -141,6 +179,8 @@ void create(int *arr, int size)
         last = t;
     }
 }
+
+// search a element in a linked list
 int Search(int num)
 {
 
@@ -235,11 +275,13 @@ void Sorted(Node *p, int num)
     }
     else
     {
-       
+
         t->next = q->next;
         q->next = t;
     }
 }
+// deleting element from a linked list
+
 void display(Node *p)
 {
     if (p != NULL)
@@ -258,8 +300,8 @@ int main()
     insert(first, 0, 10);
     insert(first, 1, 20);
     insert(first, 2, 30);
-   // inserting_Last(3);
-    //inserting_Last(4);
+    // inserting_Last(3);
+    // inserting_Last(4);
     Sorted(first, 25);
 
     display(first);
