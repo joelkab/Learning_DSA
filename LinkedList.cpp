@@ -199,7 +199,7 @@ void insert(Node *p, int pos, int key)
 void inserting_Last(int x)
 {
     Node *t = new Node;
-    Node *last ;
+    Node *last;
 
     t->data = x;
     t->next = NULL;
@@ -212,6 +212,32 @@ void inserting_Last(int x)
     {
         last->next = t;
         last = t;
+    }
+}
+// inseting a node in a sorted list
+void Sorted(Node *p, int num)
+{
+    Node *t = new Node;
+    Node *q = NULL;
+
+    t->data = num;
+    t->next = NULL;
+
+    while (p && p->data < num)
+    {
+        q = p;
+        p = p->next;
+    }
+    if (p == first)
+    {
+        t->next = first;
+        first = t;
+    }
+    else
+    {
+       
+        t->next = q->next;
+        q->next = t;
     }
 }
 void display(Node *p)
@@ -229,11 +255,12 @@ int main()
     int arr[] = {4, 7, 8, 1, 3, 87, 12, 39, 51, 23, 77};
     // create(arr, 11);
 
-    insert(first, 0, 55);
-    insert(first, 1, 22);
-    insert(first, 2, 33);
-    inserting_Last(3);
-    inserting_Last(4);
+    insert(first, 0, 10);
+    insert(first, 1, 20);
+    insert(first, 2, 30);
+   // inserting_Last(3);
+    //inserting_Last(4);
+    Sorted(first, 25);
 
     display(first);
     // display();
