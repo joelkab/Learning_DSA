@@ -314,6 +314,25 @@ int Delete(Node *p, int num)
         return num;
     }
 }
+// check if a linked list is sorted;
+bool isSorted(Node *p)
+{
+    int x = -1;
+
+    while (p != NULL)
+    {
+        if (p->data < x)
+        {
+            cout << "not sorted ";
+            return false;
+        }
+        x = p->data;
+        p = p->next;
+    }
+    cout<<"sorted";
+    return true;
+}
+//
 void display(Node *p)
 {
     if (p != NULL)
@@ -333,15 +352,12 @@ int main()
     insert(first, 0, 10);
     insert(first, 1, 20);
     insert(first, 2, 30);
-    // inserting_Last(3);
-    // inserting_Last(4);
+    
     Sorted(first, 25);
 
     display(first);
-    cout << "\nEnter a number to delete ";
-    cin >> num;
-    Delete(first, num);
+    isSorted(first);
     cout << endl;
     display(first);
-    // display();
+    
 }
