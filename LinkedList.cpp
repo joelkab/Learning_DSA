@@ -329,10 +329,32 @@ bool isSorted(Node *p)
         x = p->data;
         p = p->next;
     }
-    cout<<"sorted";
+    cout << "sorted";
     return true;
 }
-//
+/// Remove duplicates from a sorted Lsit
+void Rem_Dup()
+{
+    Node *p = first;
+    Node *q = first->next;
+    int x = 0;
+
+    while (q != NULL)
+    {
+        if (p->data != q->data)
+        {
+            p = q;
+            q = q->next;
+        }
+        else
+        {
+            cout << "\nfound one; \n ";
+            p->next = q->next;
+            delete q;
+            q = p->next;
+        }
+    }
+}
 void display(Node *p)
 {
     if (p != NULL)
@@ -351,13 +373,14 @@ int main()
 
     insert(first, 0, 10);
     insert(first, 1, 20);
-    insert(first, 2, 30);
-    
+    insert(first, 2, 20);
+    insert(first, 3, 40);
     Sorted(first, 25);
+    display(first);
+    Rem_Dup();
+
+    // isSorted(first);
+    cout << endl;
 
     display(first);
-    isSorted(first);
-    cout << endl;
-    display(first);
-    
 }
