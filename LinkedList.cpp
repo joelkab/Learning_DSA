@@ -126,7 +126,7 @@ whenever you are  deleting a node make sure to delocate the memory for that node
 new - used to create a new memory for a node.
 delete - used to delete memory for a node.
 
-one pointer required, move the first node to the next element and set it to be the first node, while the secound node stays at the first node.
+one pointer is required, move the first node to the next element and set it to be the first node, while the secound node stays at the first node.
 
 Node * p = first;
 first = first-> next;
@@ -281,7 +281,39 @@ void Sorted(Node *p, int num)
     }
 }
 // deleting element from a linked list
+int Delete(Node *p, int num)
+{
+    Node *q = NULL;
 
+    int x = -1;
+    // deleting the first number
+    if (num < 10 || num > 30)
+    {
+        return 0;
+    }
+    if (num == 10)
+    {
+        q = first;
+        x = first->data;
+        first = first->next;
+        delete q;
+        return x;
+    }
+    // deleting a specific node.
+    else
+    {
+        while (p && p->data < num)
+        {
+            q = p;
+            p = p->next;
+        }
+
+        q->next = p->next;
+        x = p->data;
+
+        return num;
+    }
+}
 void display(Node *p)
 {
     if (p != NULL)
@@ -293,6 +325,7 @@ void display(Node *p)
 // Time -O(n)
 int main()
 {
+    int num = 0;
 
     int arr[] = {4, 7, 8, 1, 3, 87, 12, 39, 51, 23, 77};
     // create(arr, 11);
@@ -304,6 +337,11 @@ int main()
     // inserting_Last(4);
     Sorted(first, 25);
 
+    display(first);
+    cout << "\nEnter a number to delete ";
+    cin >> num;
+    Delete(first, num);
+    cout << endl;
     display(first);
     // display();
 }
