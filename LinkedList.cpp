@@ -153,13 +153,21 @@ for(int i = 0; i> pos-1;i++){
 
 
 */
+/*---------------------------------- reversing a linked list--------
+there are two ways to reverse a linked list 1. Switching Nodes 2. Reversing Links
+
+** Reversing elements
+method 1- take a array with the total size of elements.
+1. copy all the elemets to the array
+2. reverse copy all the elements to the linked list
+
+
+*/
 struct Node
 {
     int data;
     Node *next;
 } *first;
-
-struct first;
 
 // create a node
 void create(int *arr, int size)
@@ -355,6 +363,28 @@ void Rem_Dup()
         }
     }
 }
+// reverse all the element of a linked list
+void Rev(Node *p)
+{
+    int Elem[12];
+    int i = 0;
+
+    while (p != NULL)
+    {
+        Elem[i] = p->data;
+        p = p->next;
+        i++;
+    }
+    p = first;
+    i--;
+
+    while (p != NULL)
+    {
+        p->data = Elem[i--];
+        p = p->next;
+    }
+}
+
 void display(Node *p)
 {
     if (p != NULL)
@@ -369,18 +399,16 @@ int main()
     int num = 0;
 
     int arr[] = {4, 7, 8, 1, 3, 87, 12, 39, 51, 23, 77};
-    // create(arr, 11);
+    create(arr, 11);
 
-    insert(first, 0, 10);
-    insert(first, 1, 20);
-    insert(first, 2, 20);
-    insert(first, 3, 40);
-    Sorted(first, 25);
-    display(first);
-    Rem_Dup();
-
+    // insert(first, 0, 10);
+    // insert(first, 1, 20);
+    // insert(first, 2, 20);
+    // insert(first, 3, 40);
     // isSorted(first);
-    cout << endl;
 
+    display(first);
+    cout << endl;
+    Rev(first);
     display(first);
 }
